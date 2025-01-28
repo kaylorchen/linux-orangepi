@@ -3405,4 +3405,14 @@ static inline int seal_check_future_write(int seals, struct vm_area_struct *vma)
 }
 
 #endif /* __KERNEL__ */
+static inline void vm_flags_set(struct vm_area_struct *vma,
+vm_flags_t flags)
+{
+vma->vm_flags |= flags;
+}
+static inline void vm_flags_clear(struct vm_area_struct *vma,
+vm_flags_t flags)
+{
+vma->vm_flags &= ~flags;
+}
 #endif /* _LINUX_MM_H */
